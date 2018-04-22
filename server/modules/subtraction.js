@@ -1,6 +1,7 @@
 const subtraction = (array) => {
-    let sum = array.shift();
-    array.forEach((number) => {
+    let newArray = array.slice();
+    let sum = newArray.shift();
+    newArray.forEach((number) => {
         sum -= number;
     });
     return sum;

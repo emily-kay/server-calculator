@@ -27,8 +27,50 @@ app.post('/addition',(req, res)=>{
         result: result
     }
     history.push(mathProblem);
+    res.sendStatus(200);
+});
+
+app.post('/subtraction',(req, res)=>{
+    let mathArray = (req.body.mathArray);
+    let result = subtraction(mathArray);
+    let mathProblem = {
+        x: mathArray[0],
+        y: mathArray[1],
+        type: '-',
+        result: result
+    }
+    history.push(mathProblem);
     console.log(history);
-    
+});
+
+app.post('/multiplication',(req, res)=>{
+    let mathArray = (req.body.mathArray);
+    let result = multiplication(mathArray);
+    let mathProblem = {
+        x: mathArray[0],
+        y: mathArray[1],
+        type: '*',
+        result: result
+    }
+    history.push(mathProblem);
+    console.log(history);
+});
+
+app.post('/division',(req, res)=>{
+    let mathArray = (req.body.mathArray);
+    let result = division(mathArray);
+    let mathProblem = {
+        x: mathArray[0],
+        y: mathArray[1],
+        type: '/',
+        result: result
+    }
+    history.push(mathProblem);
+    console.log(history);
+});
+
+app.get('/history',(req, res)=> {
+    res.send(history);
 });
 
 app.get('/', (req, res) => {
