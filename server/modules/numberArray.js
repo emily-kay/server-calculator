@@ -1,3 +1,3 @@
-const numberArray = [3,5];
+const numberArray = [];
 
 module.exports = numberArray;

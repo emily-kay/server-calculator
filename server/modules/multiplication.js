@@ -1,5 +1,5 @@
 const multiplication = (array) => {
-    let sum = 10;
+    let sum = array.shift();
     array.forEach((number) => {
         sum *= number;
     });

@@ -10,18 +10,26 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //My modules
 
-const numberArray = require('./modules/numberArray');
+const history = require('./modules/history')
 const addition = require('./modules/addition');
 const subtraction = require('./modules/subtraction');
 const multiplication = require('./modules/multiplication');
 const division = require('./modules/division');
 
-console.log(addition(numberArray));
-console.log(subtraction(numberArray));
-console.log(multiplication(numberArray));
-console.log(division(numberArray));
 
-
+app.post('/addition',(req, res)=>{
+    let mathArray = (req.body.mathArray);
+    let result = addition(mathArray);
+    let mathProblem = {
+        x: mathArray[0],
+        y: mathArray[1],
+        type: '+',
+        result: result
+    }
+    history.push(mathProblem);
+    console.log(history);
+    
+});
 
 app.get('/', (req, res) => {
     console.log('Server works');
