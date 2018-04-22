@@ -40,7 +40,7 @@ app.post('/subtraction',(req, res)=>{
         result: result
     }
     history.push(mathProblem);
-    console.log(history);
+    res.sendStatus(200);
 });
 
 app.post('/multiplication',(req, res)=>{
@@ -53,7 +53,7 @@ app.post('/multiplication',(req, res)=>{
         result: result
     }
     history.push(mathProblem);
-    console.log(history);
+    res.sendStatus(200);
 });
 
 app.post('/division',(req, res)=>{
@@ -66,7 +66,7 @@ app.post('/division',(req, res)=>{
         result: result
     }
     history.push(mathProblem);
-    console.log(history);
+    res.sendStatus(200);
 });
 
 app.get('/history',(req, res)=> {

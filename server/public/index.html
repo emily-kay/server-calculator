@@ -13,10 +13,24 @@
     <h1>Basic Server Calculator</h1>
     <input type="text" placeholder="Number" id="numberOne"/>
     <input type="text" placeholder="Number" id="numberTwo"/>
-    <button class= "calculate" id="additionButton">+</button>
-    <button class= "calculate" id="subtractionButton">-</button>
-    <button class= "calculate" id="multiplicationButton">*</button>
-    <button class= "calculate" id="divisionButton">/</button>
+    <button id="clearButton">Delete Fields</button>
+    <br>
+    <br>
+    <br>
+    <table border="10">
+        <thread>
+            <tr>
+                <td><button class= "calculate" id="additionButton">+</button></td>
+                <td><button class= "calculate" id="subtractionButton">-</button></td>
+            </tr>
+            <tr>
+                <td><button class= "calculate" id="multiplicationButton">*</button></td>
+                <td><button class= "calculate" id="divisionButton">/</button></td>
+            </tr>
+        </thread>
+    </table>
+    <br>
+    <br>
     <h2>History</h2>
     <div id="listOfProblems"></div>
 </body>

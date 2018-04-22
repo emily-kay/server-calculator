@@ -7,7 +7,7 @@ function onReady(){
     $('#subtractionButton').on('click', subHandler)
     $('#multiplicationButton').on('click', multiplyHandler)
     $('#divisionButton').on('click', divideHandler)
-
+    $('#clearButton').on('click', clearFields)
 }
 
 function addHandler(){
@@ -44,7 +44,9 @@ function subHandler(){
         data: newMath
     })//end .ajax
     .then(function(response){
+        $('#listOfProblems').empty();
         console.log(response);
+        getAllProblems();
     })
 }//end subHandler
 
@@ -62,7 +64,9 @@ function multiplyHandler(){
         data: newMath
     })//end .ajax
     .then(function(response){
+        $('#listOfProblems').empty();
         console.log(response);
+        getAllProblems();
     })
 }//end multiplyHandler
 
@@ -80,7 +84,9 @@ function divideHandler(){
         data: newMath
     })//end .ajax
     .then(function(response){
+        $('#listOfProblems').empty();
         console.log(response);
+        getAllProblems();
     })
 }//end divideHandler
 
@@ -92,9 +98,13 @@ function getAllProblems(){
     .then(function (response){
         console.log(response);
         response.forEach((problem) => {
-            $('/history').append(
-                `<p>${x}${type}${y}=${result}</p>`
+            $('#listOfProblems').append(
+                `<p>${problem.x}${problem.type}${problem.y}=${problem.result}</p>`
             )
         });
     });//end .then
+}
+
+function clearFields (){
+    $('input').val('');
 }
