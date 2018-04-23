@@ -98,7 +98,7 @@ function getAllProblems(){
     .then(function (response){
         console.log(response);
         response.forEach((problem) => {
-            $('#listOfProblems').append(
+            $('#listOfProblems').prepend(
                 `<p>${problem.x}${problem.type}${problem.y}=${problem.result}</p>`
             )
         });

@@ -4,9 +4,10 @@ body {
     text-align: center
 }
 
-table{
+table {
     margin: 1em auto;
 }
+
 td {
     height:100px;
     width:100px;
